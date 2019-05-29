@@ -39,7 +39,6 @@ pipelines:
             - printenv
             - echo "vijay" 
 
-pipelines:
   - name: pipeline1234
     steps:
       - name: testbash1
@@ -184,7 +183,6 @@ pipelines:
 #               - printenv
 
   
-pipelines:
   - name: pipeline
     setup:
       environmentVariables:

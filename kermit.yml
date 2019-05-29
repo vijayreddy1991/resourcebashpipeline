@@ -6,7 +6,7 @@ resources:
       integrationName: github
       branches:
         only: master
-    initialVersion:
+    version:
       sha: master
 
 pipelines:

@@ -12,9 +12,9 @@ resources:
 pipelines:
   - name: runtime
     setup: 
-      environmentVariables:
-        readOnly:
-          Number: 27   
+#       environmentVariables:
+#         readOnly:
+#           Number: 27   
       runtime:       
         type: 
         image:

@@ -65,12 +65,12 @@ pipelines:
             - echo "Test3"
             - echo $FOO_STATE
 
-      - name: test4
-        type: bash   
-        execution:
-          onExecute:
-            - echo "test4"
-            - echo $FOO_STATE
+#       - name: test4
+#         type: bash   
+#         execution:
+#           onExecute:
+#             - echo "test4"
+#             - echo $FOO_STATE
 
 
 

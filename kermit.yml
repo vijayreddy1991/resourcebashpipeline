@@ -30,6 +30,9 @@ pipelines:
       - name: test1
         type: bash
         setup:
+          environmentVariables:
+            normal:
+             Number: 27         
           runtime:
             type: image
             image:
@@ -54,6 +57,7 @@ pipelines:
           onExecute:
             - echo "test2"
             - echo $vijay
+            - echo $Number
 
       - name: test3
         type: bash  

@@ -80,7 +80,7 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - bump_semver v1. rc
+            - bump_semver v1.0.0 minor
    
 #       - name: test1
 #         type: bash

@@ -84,10 +84,10 @@ pipelines:
           runtime:            
             type: image
             image:
-#               auto:
-#                 language: nodejs
-#                 versions: 
-#                   - 10.15.3
+              auto:
+                language: nodejs
+                versions: 
+                  - 10.15.3
               custom:
                 name: drydock/u16node
                 tag: master
@@ -101,6 +101,7 @@ pipelines:
           onExecute:
             - printenv
             - echo "vijay" 
+            - bump_semver v1.0.0 major
 
 #   - name: pipeline1234
 #     steps:

@@ -57,7 +57,7 @@ pipelines:
             - printenv
           onExecute:
             - echo "vijay" 
-            - bump_semver v1 base
+            - bump_semver v1.0.0 minor
 
       - name: c7_node
         type: bash
@@ -80,7 +80,7 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - bump_semver v1 base
+            - bump_semver v1. rc
    
 #       - name: test1
 #         type: bash

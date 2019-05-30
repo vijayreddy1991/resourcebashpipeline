@@ -34,7 +34,7 @@ pipelines:
             - printenv
           onExecute:
             - echo "vijay" 
-            - bump_semver v1 base
+            - bump_semver v1.0.0 major
       - name: u18_node
         type: bash
         setup:

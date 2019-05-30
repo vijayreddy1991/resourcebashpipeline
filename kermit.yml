@@ -35,7 +35,7 @@ pipelines:
           onExecute:
             - echo "vijay" 
             - bump_semver v1.0.0 major
-            - compare_git --path vijayreddy1991/resourcebashpipeline --commit-range HEAD~2..HEAD
+            - compare_git --resource test
             
       - name: u18_node
         type: bash

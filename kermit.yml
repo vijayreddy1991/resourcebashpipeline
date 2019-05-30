@@ -12,7 +12,7 @@ resources:
 pipelines:
   - name: pipe_vijay
     steps:
-      - name: step_utility
+      - name: u16
         type: bash
         setup:
           runtime:            
@@ -33,10 +33,54 @@ pipelines:
           onStart:
             - printenv
           onExecute:
+            - echo "vijay" 
+            - bump_semver v1.0.0 patch
+      - name: u18
+        type: bash
+        setup:
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: nodejs
+                versions: 
+                  - 10.15.3
+              custom:
+                name: drydock/u18node
+                tag: master
+                options: ""
+        triggeredBy:
+          steps:
+            - u16
+        execution:
+          onStart:
             - printenv
+          onExecute:
             - echo "vijay" 
             - bump_semver v1.0.0 patch
 
+      - name: c7
+        type: bash
+        setup:
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: nodejs
+                versions: 
+                  - 10.15.3
+              custom:
+                name: drydock/c7node
+                tag: master
+                options: ""
+        triggeredBy:
+          steps:
+            - u18
+        execution:
+          onStart:
+            - printenv
+          onExecute:
+            - bump_semver v1.0.0 patch
    
 #       - name: test1
 #         type: bash

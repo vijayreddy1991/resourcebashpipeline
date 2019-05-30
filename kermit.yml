@@ -101,7 +101,7 @@ pipelines:
           onExecute:
             - printenv
             - echo "vijay" 
-            - bump_semver v1.0.0 major
+            - bump_semver v1.0.0 minor
 
 #   - name: pipeline1234
 #     steps:

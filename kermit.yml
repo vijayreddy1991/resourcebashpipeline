@@ -10,6 +10,33 @@ resources:
       sha: master
 
 pipelines:
+  - name: pipe_steps
+    steps:
+      - name: step_state
+        type: bash
+        setup:
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: nodejs
+                versions: 
+                  - 10.15.3
+              custom:
+                name: drydock/u16node
+                tag: master
+                options: ""
+        triggeredBy:
+          resources:
+            - test
+        execution:
+          onStart:
+            - printenv
+          onExecute:
+            - printenv
+            - echo "vijay" 
+            - bump_semver v1.0.0 patch
+
 #   - name: runtime
 #     setup: 
 # #       environmentVariables:
@@ -75,33 +102,6 @@ pipelines:
 # #           onExecute:
 # #             - echo "test4"
 # #             - echo $FOO_STATE
-
-  - name: pipe_steps
-    steps:
-      - name: step_state
-        type: bash
-        setup:
-          runtime:            
-            type: image
-            image:
-              auto:
-                language: nodejs
-                versions: 
-                  - 10.15.3
-              custom:
-                name: drydock/u16node
-                tag: master
-                options: ""
-        triggeredBy:
-          resources:
-            - test
-        execution:
-          onStart:
-            - printenv
-          onExecute:
-            - printenv
-            - echo "vijay" 
-            - bump_semver v1.0.0 minor
 
 #   - name: pipeline1234
 #     steps:

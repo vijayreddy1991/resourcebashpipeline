@@ -37,7 +37,7 @@ pipelines:
             - bump_semver v1.0.0 major
             - compare_git --resource test
             - printenv
-            - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test/gitRepo
+            - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
             
       - name: u18_node
         type: bash

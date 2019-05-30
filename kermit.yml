@@ -238,7 +238,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - test
+            - testbash2
         execution:
           onStart:
             - printenv

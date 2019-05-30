@@ -12,7 +12,7 @@ resources:
 pipelines:
   - name: pipe_vijay
     steps:
-      - name: u16
+      - name: u16_node
         type: bash
         setup:
           runtime:            
@@ -35,7 +35,7 @@ pipelines:
           onExecute:
             - echo "vijay" 
             - bump_semver v1.0.0 patch
-      - name: u18
+      - name: u18_node
         type: bash
         setup:
           runtime:            
@@ -51,7 +51,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - u16
+            - u16_node
         execution:
           onStart:
             - printenv
@@ -59,7 +59,7 @@ pipelines:
             - echo "vijay" 
             - bump_semver v1.0.0 patch
 
-      - name: c7
+      - name: c7_node
         type: bash
         setup:
           runtime:            
@@ -75,7 +75,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - u18
+            - u18_node
         execution:
           onStart:
             - printenv

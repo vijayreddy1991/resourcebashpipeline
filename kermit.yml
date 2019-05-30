@@ -54,8 +54,8 @@ pipelines:
                 tag: master
                 options: ""
         triggeredBy:
-          steps:
-            - u16_node
+          resources:
+            - test
         execution:
           onStart:
             - printenv
@@ -65,6 +65,8 @@ pipelines:
 #             - compare_git --resource test
             - printenv
             - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
+            - switch_env nodejs 8.16.0
+            - node --version
       - name: c7_node
         type: bash
         setup:
@@ -80,8 +82,8 @@ pipelines:
                 tag: master
                 options: ""
         triggeredBy:
-          steps:
-            - u18_node
+          resources:
+            - test
         execution:
           onStart:
             - printenv

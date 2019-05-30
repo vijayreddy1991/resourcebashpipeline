@@ -10,7 +10,7 @@ resources:
       sha: master
 
 pipelines:
-  - name: pipe_steps
+  - name: pipe_vijay
     steps:
       - name: step_utility
         type: bash

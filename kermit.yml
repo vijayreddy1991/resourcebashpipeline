@@ -38,7 +38,6 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - echo "vijay" 
             - bump_semver v1.0.0 major
             - compare_git --resource test
             - compare_git --resource test --commit-range HEAD~2..HEAD

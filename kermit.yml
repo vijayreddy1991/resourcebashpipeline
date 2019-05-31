@@ -29,9 +29,9 @@ pipelines:
         requires:
           resources:
             - test                             
-#         triggeredBy:
-#           resources:
-#             - test
+        triggeredBy:
+          resources:
+            - test
         execution:
           onStart:
             - printenv

@@ -26,11 +26,9 @@ pipelines:
                 name: drydock/u18node
                 tag: master
                 options: ""
-#         requires:
-#           resources:
-#             - test                
-#           integrations:
-#             - github_vijay1               
+        requires:
+          resources:
+            - test                             
         triggeredBy:
           resources:
             - test

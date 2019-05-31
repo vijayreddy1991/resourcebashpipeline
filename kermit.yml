@@ -40,7 +40,10 @@ pipelines:
             - compare_git --resource test --commit-range HEAD~2..HEAD
             - printenv
             - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
-            - node --version      
+            - node --version     
+            
+            
+            
 #       - name: u18_node
 #         type: bash
 #         setup:

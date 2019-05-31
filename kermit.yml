@@ -26,14 +26,14 @@ pipelines:
                 name: drydock/u18node
                 tag: master
                 options: ""
-#         requires:
-#           resources:
-#             - test                
+        requires:
+          resources:
+            - test                
 #           integrations:
 #             - github_vijay1               
-        triggeredBy:
-          resources:
-            - test
+#         triggeredBy:
+#           resources:
+#             - test
         execution:
           onStart:
             - printenv

@@ -26,12 +26,12 @@ pipelines:
                 name: drydock/u16node
                 tag: master
                 options: ""
-        requires:
-          resources:
-            - test                             
-        triggeredBy:
-          resources:
-            - test
+#         requires:
+#           resources:
+#             - test                             
+#         triggeredBy:
+#           resources:
+#             - test
         execution:
           onStart:
             - printenv

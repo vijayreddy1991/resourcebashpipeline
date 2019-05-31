@@ -29,8 +29,8 @@ pipelines:
 #         requires:
 #           resources:
 #             - test                
-          integrations:
-            - github_vijay1               
+#           integrations:
+#             - github_vijay1               
         triggeredBy:
           resources:
             - test

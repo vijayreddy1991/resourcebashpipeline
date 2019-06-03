@@ -41,7 +41,7 @@ pipelines:
             - printenv
             - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
             - node --version 
-            - update_commit_status test --status processing --message "updated u16" --context $STEP_NAME
+            - update_commit_status test --status success --message "updated u16node" --context $STEP_NAME
             
 #       - name: u18_node
 #         type: bash

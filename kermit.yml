@@ -47,6 +47,7 @@ pipelines:
             - replace_envs old.env new.env
             - cat new.env
             - cat old.env
+            - printenv
             
 #       - name: u18_node
 #         type: bash

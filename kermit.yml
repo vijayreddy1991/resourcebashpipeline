@@ -45,6 +45,8 @@ pipelines:
             - retry_command node --version
             - pushd $res_test_resourcePath 
             - replace_envs old.env new.env
+            - cat new.env
+            - cat old.env
             
 #       - name: u18_node
 #         type: bash

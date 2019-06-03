@@ -43,7 +43,8 @@ pipelines:
 #             - node --version 
 #             - update_commit_status test --status success --message "updated u16node" --context $STEP_NAME
             - retry_command node --version
-            - replace_envs test.env testing.env
+            - pushd 
+            - replace_envs old.env new.env
             
 #       - name: u18_node
 #         type: bash

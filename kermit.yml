@@ -67,58 +67,62 @@ pipelines:
             - cat encrypted
             - decrypt_file encrypted --key key.pem
             
-#       - name: u18_node
-#         type: bash
-#         setup:
-#           runtime:            
-#             type: image
-#             image:
-#               auto:
-#                 language: nodejs
-#                 versions: 
-#                   - 10.15.3
-#               custom:
-#                 name: drydock/u18node
-#                 tag: master
-#                 options: ""
-#         triggeredBy:
-#           steps:
-#             - u16_node
-#         execution:
-#           onStart:
-#             - printenv
-#           onExecute:
-#             - echo "vijay" 
-#             - bump_semver v1.0.0 minor
-#             - compare_git --resource test
-#             - printenv
-#             - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
-#             - switch_env nodejs 8.16.0
-#             - retry_command node --version
-#       - name: c7_node
-#         type: bash
-#         setup:
-#           runtime:            
-#             type: image
-#             image:
-#               auto:
-#                 language: nodejs
-#                 versions: 
-#                   - 10.15.3
-#               custom:
-#                 name: drydock/c7node
-#                 tag: master
-#                 options: ""
-#         triggeredBy:
-#           steps:
-#             - u18_node
-#         execution:
-#           onStart:
-#             - printenv
-#           onExecute:
-#             - bump_semver v1.0.0 minor
-#             - compare_git --resource test
-#             - printenv
+      - name: u18_node
+        type: bash
+        setup:
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: nodejs
+                versions: 
+                  - 10.15.3
+              custom:
+                name: drydock/u18node
+                tag: master
+                options: ""
+        triggeredBy:
+          resources:
+            - test
+          steps:
+            - u16_node
+        execution:
+          onStart:
+            - printenv
+          onExecute:
+            - echo "vijay" 
+            - bump_semver v1.0.0 minor
+            - compare_git --resource test
+            - printenv
+            - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
+            - switch_env nodejs 8.16.0
+            - retry_command node --version
+      - name: c7_node
+        type: bash
+        setup:
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: nodejs
+                versions: 
+                  - 10.15.3
+              custom:
+                name: drydock/c7node
+                tag: master
+                options: ""
+        triggeredBy:
+          resources:
+            - test        
+          steps:
+            - u18_node
+        execution:
+          onStart:
+            - printenv
+          onExecute:
+            - bump_semver v1.0.0 minor
+            - compare_git --resource test
+            - printenv
 #             - compare_git --commit-range 968cc732f0194516303157a09a3b245e86b8a408..master --path $STEP_DEPENDENCY_STATE_DIR/resources/test
             
 #       - name: test1

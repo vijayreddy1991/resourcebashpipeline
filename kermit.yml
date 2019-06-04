@@ -13,7 +13,7 @@ pipelines:
   - name: pipe_vijay
     steps:
       - name: u16_node
-        type: bash
+#         type: bash
         setup:
           runtime:            
             type: image
@@ -43,11 +43,12 @@ pipelines:
 #             - node --version 
 #             - update_commit_status test --status success --message "updated u16node" --context $STEP_NAME
             - retry_command node --version
-            - pushd $res_test_resourcePath 
-            - replace_envs old.env new.env
-            - cat new.env
-            - cat old.env
-            - printenv
+#             - pushd $res_test_resourcePath 
+#             - replace_envs old.env new.env
+#             - cat new.env
+#             - cat old.env
+#             - printenv
+            - 
             
 #       - name: u18_node
 #         type: bash

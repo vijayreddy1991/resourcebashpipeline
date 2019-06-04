@@ -38,7 +38,10 @@ pipelines:
                 options: ""
         requires:
           resources:
-            - test                             
+            - test 
+          integrations:
+            - vijay_slack
+            
         triggeredBy:
           resources:
             - test
@@ -73,6 +76,7 @@ pipelines:
             - add_run_variable vijay=kumar
             - printenv
             - echo $vijay
+            - send_notification vijay_slack 
             
 #       - name: u18_node
 #         type: bash

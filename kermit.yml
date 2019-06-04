@@ -78,7 +78,10 @@ pipelines:
             - printenv
             - echo $vijay
             - send_notification vijay_slack 
-            
+           onSuccess:
+            - send_notification vijay_slack
+          onFailure:
+            - send_notification vijay_slack           
             
 #       - name: u18_node
 #         type: bash

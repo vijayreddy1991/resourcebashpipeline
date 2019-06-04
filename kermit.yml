@@ -57,8 +57,8 @@ pipelines:
             - pushd $res_test_resourcePath 
             - read_json secret.json "TOP_SECRET_CONFIDENTIAL_FORMULA"
             - popd
-            - pushd $res_secretkeys_resourcePath
-            - echo $res_secretkeys_resourcePath
+            - pushd $res_keys_resourcePath
+            - echo $res_keys_resourcePath
             - openssl genrsa -out key.pem 1024 
             - openssl rsa -in key.pem -text -noout
             - openssl rsa -in key.pem -pubout -out pub.pem 

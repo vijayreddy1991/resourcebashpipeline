@@ -66,6 +66,8 @@ pipelines:
             - encrypt_file keys.txt --key pub.pem
             - cat encrypted
             - decrypt_file encrypted --key key.pem
+            - popd
+            - pushd $res_test_resourcePath 
             - cache_files old.env my_file
             - restore_cache my_file old.env
             
@@ -111,7 +113,8 @@ pipelines:
             - encrypt_file keys.txt --key pub.pem
             - cat encrypted
             - decrypt_file encrypted --key key.pem
-            - cache_files old.env my_file
+            - popd
+            - pushd $res_test_resourcePath 
             - restore_cache my_file old.env
             
             
@@ -154,7 +157,8 @@ pipelines:
             - encrypt_file keys.txt --key pub.pem
             - cat encrypted
             - decrypt_file encrypted --key key.pem
-            - cache_files old.env my_file
+            - popd
+            - - pushd $res_test_resourcePath 
             - restore_cache my_file old.env
             
 #       - name: test1

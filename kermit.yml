@@ -70,6 +70,7 @@ pipelines:
             - pushd $res_test_resourcePath 
             - cache_files old.env my_file
             - restore_cache my_file old.env
+            - add_run_variable vijay=kumar
             
       - name: u18_node
         type: bash

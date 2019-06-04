@@ -49,6 +49,7 @@ pipelines:
         execution:
           onStart:
             - printenv
+            - send_notification vijay_slack             
           onExecute:
             - bump_semver v1.0.0 major
             - compare_git --resource test --commit-range HEAD~2..HEAD
@@ -77,6 +78,7 @@ pipelines:
             - printenv
             - echo $vijay
             - send_notification vijay_slack 
+            
             
 #       - name: u18_node
 #         type: bash

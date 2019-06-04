@@ -13,7 +13,7 @@ pipelines:
   - name: pipe_vijay
     steps:
       - name: u16_node
-#         type: bash
+        type: bash
         setup:
           runtime:            
             type: image

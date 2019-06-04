@@ -9,6 +9,16 @@ resources:
     version:
       sha: master
 
+  - name: keys
+    type: gitRepo
+    repoPath: vijayreddy1991/secretkeys
+    configuration:
+      integrationName: github_vijay
+      branches:
+        only: master
+    version:
+      sha: master
+
 pipelines:
   - name: pipe_vijay
     steps:
@@ -32,6 +42,7 @@ pipelines:
         triggeredBy:
           resources:
             - test
+            - keys
         execution:
           onStart:
             - printenv
@@ -45,6 +56,14 @@ pipelines:
             - retry_command node --version
             - pushd $res_test_resourcePath 
             - read_json secret.json "TOP_SECRET_CONFIDENTIAL_FORMULA"
+            - pushd $res_secretkeys_resourcePath
+            - echo $res_secretkeys_resourcePath
+            - openssl genrsa -out key.pem 1024 
+            - openssl rsa -in key.pem -text -noout
+            - openssl rsa -in key.pem -pubout -out pub.pem 
+            - openssl rsa -in pub.pem -pubin -text -noout
+            - encrypt_file keys.txt --key pub.pem
+            - cat encrypted
             
 #       - name: u18_node
 #         type: bash

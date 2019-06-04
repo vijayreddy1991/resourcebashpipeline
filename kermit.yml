@@ -72,6 +72,7 @@ pipelines:
             - restore_cache my_file old.env
             - add_run_variable vijay=kumar
             - printenv
+            - echo $vijay
             
 #       - name: u18_node
 #         type: bash

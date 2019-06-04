@@ -43,12 +43,8 @@ pipelines:
 #             - node --version 
 #             - update_commit_status test --status success --message "updated u16node" --context $STEP_NAME
             - retry_command node --version
-#             - pushd $res_test_resourcePath 
-#             - replace_envs old.env new.env
-#             - cat new.env
-#             - cat old.env
-#             - printenv
-            - 
+            - pushd $res_test_resourcePath 
+            - read_json secret.json "TOP_SECRET_CONFIDENTIAL_FORMULA"
             
 #       - name: u18_node
 #         type: bash

@@ -56,6 +56,7 @@ pipelines:
             - retry_command node --version
             - pushd $res_test_resourcePath 
             - read_json secret.json "TOP_SECRET_CONFIDENTIAL_FORMULA"
+            - popd
             - pushd $res_secretkeys_resourcePath
             - echo $res_secretkeys_resourcePath
             - openssl genrsa -out key.pem 1024 

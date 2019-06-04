@@ -158,7 +158,7 @@ pipelines:
             - cat encrypted
             - decrypt_file encrypted --key key.pem
             - popd
-            - - pushd $res_test_resourcePath 
+            - pushd $res_test_resourcePath 
             - restore_cache my_file old.env
             
 #       - name: test1

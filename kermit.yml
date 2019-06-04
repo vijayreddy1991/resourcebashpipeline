@@ -65,7 +65,7 @@ pipelines:
             - openssl rsa -in pub.pem -pubin -text -noout
             - encrypt_file keys.txt --key pub.pem
             - cat encrypted
-            - - decrypt_file encrypted --key key.pem
+            - decrypt_file encrypted --key key.pem
             
 #       - name: u18_node
 #         type: bash

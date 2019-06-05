@@ -78,7 +78,7 @@ pipelines:
             - printen
             - echo $vijay
             - send_notification vijay_slack 
-           onSuccess:
+          onSuccess:
             - send_notification vijay_slack
           onFailure:
             - send_notification vijay_slack           

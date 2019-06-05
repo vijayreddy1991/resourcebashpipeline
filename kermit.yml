@@ -80,7 +80,7 @@ pipelines:
             - cache_files old.env my_file
             - restore_cache my_file old.env
             - add_run_variable vijay=kumar
-            - printen
+            - printenv
             - echo $vijay
             - send_notification vijay_slack 
           onSuccess:

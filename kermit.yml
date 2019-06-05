@@ -24,7 +24,7 @@ pipelines:
     steps:
       - name: u16_node
         type: bash
-        configuration:
+#         configuration:
 #           affinityGroup: bldGroup 
 #           priority: <[0-10000]>
 #           timeoutSeconds: <job timeout limit>

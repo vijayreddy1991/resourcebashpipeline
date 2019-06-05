@@ -28,7 +28,7 @@ pipelines:
 #           affinityGroup: bldGroup 
 #           priority: <[0-10000]>
 #           timeoutSeconds: <job timeout limit>
-          nodePool: ankul_nodes      
+          nodePool: kermit_centos_pool     
         setup:
           runtime:            
             type: image
